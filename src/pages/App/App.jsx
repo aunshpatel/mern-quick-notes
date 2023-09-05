@@ -3,8 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+import MyNotesPage from '../MyNotesPage/MyNotesPage';
 import NavBar from '../../components/NavBar/NavBar';
 
 export default function App() {
@@ -15,10 +14,10 @@ export default function App() {
       { user ?
           <>
             <NavBar user={user} setUser={setUser} />
+            <h1>Welcome to 'The Notes Site'</h1>
+            <h2>Please click on an option in the navbar above to continue.</h2>
             <Routes>
-              {/* Route components in here */}
-              <Route path="/orders/new" element={<NewOrderPage />} />
-              <Route path="/orders" element={<OrderHistoryPage />} />
+              <Route path="/notes" element={<MyNotesPage />} />
             </Routes>
           </>
           :
